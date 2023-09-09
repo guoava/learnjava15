@@ -17,6 +17,7 @@ public class MyClassTest {
             Object objTwo = aClassTwo.newInstance();
             for (Method method : aClassTwo.getMethods()) {
                 if ("invokeAnotherObjShow".equals(method.getName())) {
+//                    method.setAccessible(true);
                     method.invoke(objTwo, objTwo);
                     // 两个不同的classLoader有隔离
                     method.invoke(objTwo, obj);

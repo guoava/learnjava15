@@ -2,16 +2,16 @@ package com.xinyu.javalearn.classloader.order;
 
 public class TestOrder {
     static {
-        System.out.println("Test static code execute.");
+        System.out.println("TestOrder static code execute.");
     }
 
-    static Stub testStaticStub = new Stub("Test static object ");
+    static Stub testStaticStub = new Stub("TestOrder static object ");
 
     {
-        System.out.println("Test code execute");
+        System.out.println("TestOrder code execute");
     }
 
-    Stub testStub = new Stub("Test  object ");
+    Stub testStub = new Stub("TestOrder  object is assign");
 
     /**
      * 1 静态代码最先执行，主程序静态代码 -> 父类静态代码 -> 子类静态代码。
@@ -33,6 +33,8 @@ public class TestOrder {
         child.sayHello();
         ((Parent) child).sayHello();
 
+        // 本类实例化时 才会执行类变量的赋值  和 类代码初始化
+        TestOrder testOrder = new TestOrder();
     }
 
 }
