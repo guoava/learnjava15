@@ -8,6 +8,13 @@ package com.xinyu.javalearn.generics;
 public class GenericClass<T> {
     private T t;
 
+    public GenericClass() {
+    }
+
+    public GenericClass(T t) {
+        this.t = t;
+    }
+
     public T getT() {
         return t;
     }
